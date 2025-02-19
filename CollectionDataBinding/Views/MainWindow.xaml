@@ -1,0 +1,25 @@
+﻿<Window x:Class="CollectionDataBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CollectionDataBinding" xmlns:viewmodels="clr-namespace:CollectionDataBinding.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="420">
+
+    <Window.DataContext>
+        <viewmodels:MainViewModel/>
+    </Window.DataContext>
+    
+
+    <Grid Background="#f1f3f5">
+        
+            <Border HorizontalAlignment="Center" CornerRadius="10" Background="White" BorderThickness="1" BorderBrush="#adb5bd" VerticalAlignment="Bottom" Width="200" Height="300" Margin="0,0,0,117">
+                 <TextBlock  VerticalAlignment="Center" Text="{Binding View.CurrentItem }" FontSize="100" Foreground="#495057" HorizontalAlignment="Center" Background="Transparent" ></TextBlock>
+            </Border>
+
+            <Button Content="Previous" Command="{Binding MovePreviousCommand}" Margin="100,0,233,60" Padding="5"  VerticalAlignment="Bottom" Background="White" BorderThickness="1" BorderBrush="#adb5bd"/>
+            <Button Content="Next" Command="{Binding MoveNextCommand}" Margin="230,0,100,60" Padding="5" VerticalAlignment="Bottom" Background="White" BorderThickness="1" BorderBrush="#adb5bd"/>
+        
+    </Grid>
+</Window>
